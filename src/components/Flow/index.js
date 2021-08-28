@@ -6,32 +6,32 @@ import Text from "./Text";
 const panchBhut = [
   {
     id: "1-1-1",
-    data: { label: <Text label='आकाश' /> },
-    position: { x: 9, y: 191 },
+    data: { label: <Text label='आकाश 🔵' /> },
+    position: { x: 238, y: 191 },
     type: "input",
   },
   {
     id: "1-1-2",
-    data: { label: <Text label='वायु' /> },
-    position: { x: 77, y: 256 },
+    data: { label: <Text label='वायु 🌬️' /> },
+    position: { x: 238, y: 256 },
     type: "input",
   },
   {
     id: "1-1-3",
-    data: { label: <Text label='अग्नि' /> },
-    position: { x: 144, y: 321 },
+    data: { label: <Text label='अग्नि 🔥' /> },
+    position: { x: 238, y: 321 },
     type: "input",
   },
   {
     id: "1-1-4",
-    data: { label: <Text label='जल' /> },
-    position: { x: 206, y: 386 },
+    data: { label: <Text label='जल 🌊' /> },
+    position: { x: 238, y: 386 },
     type: "input",
   },
   {
     id: "1-1-5",
-    data: { label: <Text label='पृथ्‍वी' /> },
-    position: { x: 278, y: 453 },
+    data: { label: <Text label='पृथ्‍वी 🌎' /> },
+    position: { x: 238, y: 453 },
     type: "input",
   },
 ];
@@ -61,6 +61,39 @@ const suksmSarirParts = [
     id: "1-3-5",
     data: { label: <Text label='बुद्धि' /> },
     position: { x: 731, y: 500 },
+  },
+];
+
+const karmaSenses = [
+  {
+    id: "1-3-1a",
+    type: "input", // input node
+    data: { label: <Text label='हाथ' /> },
+    position: { x: 934, y: -9 },
+  },
+  {
+    id: "1-3-1b",
+    type: "input", // input node
+    data: { label: <Text label='पैर' /> },
+    position: { x: 934, y: -9 },
+  },
+  {
+    id: "1-3-1c",
+    type: "input", // input node
+    data: { label: <Text label='मुंह' /> },
+    position: { x: 934, y: -9 },
+  },
+  {
+    id: "1-3-1d",
+    type: "input", // input node
+    data: { label: <Text label='मूत्रइन्द्रिय' /> },
+    position: { x: 934, y: -9 },
+  },
+  {
+    id: "1-3-1e",
+    type: "input", // input node
+    data: { label: <Text label='मलद्वार' /> },
+    position: { x: 934, y: -9 },
   },
 ];
 
@@ -98,19 +131,20 @@ const elements = [
   },
 
   ...suksmSarirParts,
+  ...karmaSenses,
 
   // animated edge
   { id: "e1-2", source: "1", target: "1-1", animated: false },
   { id: "e1-3", source: "1", target: "1-2" },
   { id: "e1-4", source: "1", target: "1-3" },
-  { id: "e1-5", source: "1-1", target: "1-1-1", type: "step" },
-  { id: "e1-6", source: "1-1", target: "1-1-2", type: "step" },
+  { id: "e1-5", source: "1-1", target: "1-1-1" },
+  { id: "e1-6", source: "1-1", target: "1-1-2" },
   {
     id: "e1-7",
     source: "1-1",
     target: "1-1-3",
     label: "पांच भौतिक शरीर",
-    type: "step",
+
     labelStyle: { fill: "black", fontSize: "1rem" },
     labelBgPadding: [5, 5],
     labelBgBorderRadius: 4,
@@ -129,7 +163,7 @@ const elements = [
     labelStyle: { fill: "black", fontSize: "1rem" },
     labelBgPadding: [5, 5],
     labelBgBorderRadius: 4,
-    type: "step",
+
     labelBgStyle: {
       fill: "#FFCC00",
       fontWeight: "500",
@@ -137,13 +171,19 @@ const elements = [
       fillOpacity: 1,
     },
   },
-  { id: "e1-9", source: "1-1", target: "1-1-5", type: "step" },
-  { id: "e1-10", source: "1-3", target: "1-3-1", type: "step" },
-  { id: "e1-11", source: "1-3", target: "1-3-2", type: "step" },
-  { id: "e1-12", source: "1-3", target: "1-3-3", type: "step" },
-  { id: "e1-13", source: "1-3", target: "1-3-4", type: "step" },
-  { id: "e1-14", source: "1-3", target: "1-3-5", type: "step" },
+  { id: "e1-9", source: "1-1", target: "1-1-5" },
+  { id: "e1-9w", source: "1-1", target: "1-1-4" },
+  { id: "e1-10", source: "1-3", target: "1-3-1" },
+  { id: "e1-11", source: "1-3", target: "1-3-2" },
+  { id: "e1-12", source: "1-3", target: "1-3-3" },
+  { id: "e1-13", source: "1-3", target: "1-3-4" },
+  { id: "e1-14", source: "1-3", target: "1-3-5" },
   { id: "e1-15", source: "1-2", target: "1-4" },
+  { id: "e1-16", source: "1-3-1", target: "1-3-1a" },
+  { id: "e1-16", source: "1-3-1", target: "1-3-1b" },
+  { id: "e1-16", source: "1-3-1", target: "1-3-1c" },
+  { id: "e1-16", source: "1-3-1", target: "1-3-1d" },
+  { id: "e1-16", source: "1-3-1", target: "1-3-1e" },
 ];
 
 const Flow = () => {

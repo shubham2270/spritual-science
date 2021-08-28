@@ -1,7 +1,7 @@
 import React from "react";
 
-const Text = ({ label }) => {
-  return <div style={{ fontSize: "1.5rem" }}>{label}</div>;
+const Text = ({ label, size }) => {
+  return <div style={{ fontSize: size || "1.2rem" }}>{label}</div>;
 };
 
 export default Text;
