@@ -3,20 +3,7 @@ import ReactFlow from "react-flow-renderer";
 
 import Text from "./Text";
 
-const elements = [
-  {
-    id: "1",
-    type: "input", // input node
-    data: { label: "शरीर" },
-    position: { x: 734, y: -9 },
-  },
-  // default node
-  {
-    id: "1-1",
-    // you can also pass a React component as a label
-    data: { label: <Text label='स्थूल' /> },
-    position: { x: 528, y: 104 },
-  },
+const panchBhut = [
   {
     id: "1-1-1",
     data: { label: <Text label='आकाश' /> },
@@ -47,6 +34,51 @@ const elements = [
     position: { x: 278, y: 453 },
     type: "input",
   },
+];
+
+const suksmSarirParts = [
+  {
+    id: "1-3-1",
+    data: { label: <Text label='5 कर्म इन्द्र्य' /> },
+    position: { x: 731, y: 241 },
+  },
+  {
+    id: "1-3-2",
+    data: { label: <Text label='5 ज्ञान इन्द्र्य' /> },
+    position: { x: 731, y: 306 },
+  },
+  {
+    id: "1-3-3",
+    data: { label: <Text label='5 प्राण' /> },
+    position: { x: 731, y: 370 },
+  },
+  {
+    id: "1-3-4",
+    data: { label: <Text label='मन' /> },
+    position: { x: 731, y: 435 },
+  },
+  {
+    id: "1-3-5",
+    data: { label: <Text label='बुद्धि' /> },
+    position: { x: 731, y: 500 },
+  },
+];
+
+const elements = [
+  {
+    id: "1",
+    type: "input", // input node
+    data: { label: "शरीर" },
+    position: { x: 734, y: -9 },
+  },
+  // default node
+  {
+    id: "1-1",
+    // you can also pass a React component as a label
+    data: { label: <Text label='स्थूल' /> },
+    position: { x: 528, y: 104 },
+  },
+  ...panchBhut,
   {
     id: "1-2",
     data: { label: <Text label='कारण' /> },
@@ -55,33 +87,17 @@ const elements = [
   {
     id: "1-3",
     data: { label: <Text label='सूछ्म' /> },
-    position: { x: 737, y: 104 },
+    position: { x: 731, y: 104 },
   },
   {
-    id: "1-3-1",
-    data: { label: <Text label='5 कर्म इन्द्र्य' /> },
-    position: { x: 737, y: 104 },
+    id: "1-4",
+    data: {
+      label: <Text label='वासना+अहंकार' />,
+    },
+    position: { x: 956, y: 206 },
   },
-  {
-    id: "1-3-2",
-    data: { label: <Text label='5 ज्ञान इन्द्र्य' /> },
-    position: { x: 737, y: 104 },
-  },
-  {
-    id: "1-3-3",
-    data: { label: <Text label='5 प्राण' /> },
-    position: { x: 737, y: 104 },
-  },
-  {
-    id: "1-3-4",
-    data: { label: <Text label='मन' /> },
-    position: { x: 737, y: 104 },
-  },
-  {
-    id: "1-3-5",
-    data: { label: <Text label='बुद्धि' /> },
-    position: { x: 737, y: 104 },
-  },
+
+  ...suksmSarirParts,
 
   // animated edge
   { id: "e1-2", source: "1", target: "1-1", animated: false },
@@ -106,7 +122,7 @@ const elements = [
     },
   },
   {
-    id: "e1-7",
+    id: "e1-8",
     source: "1-3",
     target: "1-3-1",
     label: "17 तत्व से बना",
@@ -127,6 +143,7 @@ const elements = [
   { id: "e1-12", source: "1-3", target: "1-3-3", type: "step" },
   { id: "e1-13", source: "1-3", target: "1-3-4", type: "step" },
   { id: "e1-14", source: "1-3", target: "1-3-5", type: "step" },
+  { id: "e1-15", source: "1-2", target: "1-4" },
 ];
 
 const Flow = () => {
